@@ -13,7 +13,7 @@ class Calculator {
       return value;
     };
   
-    addByListArr = (arr) => {
+    addByList = (arr) => {
       let sum = 0;
       arr.forEach((item) => {
         sum += item;
@@ -35,6 +35,34 @@ class Calculator {
         return totalSubtract;
     };
     
+    multiply = (num1, num2) => {
+        const value = num1 * num2;
+        this.#log(value);
+        return value;
+        };
+
+    multiplyByList = (arr) => {
+        let sum = 1;
+        arr.forEach((item) => {
+            sum *= item;
+        });
+        return sum;
+    };
+
+    divide = (num1, num2) => {
+        const value = num1 / num2;
+        this.#log(value);
+        return value;
+        };
+
+    divideByList = (arr) => {
+        let totalDivide = arr[0];
+        for (let i = 1; i < arr.length; i++) {
+            totalDivide -= arr[i];
+        }
+        return totalDivide;
+    };  
+
   }
 
 
