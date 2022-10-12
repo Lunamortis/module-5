@@ -1,7 +1,8 @@
 require("dotenv").config();
 
 const express = require("express");
-// const swaggerUi = require("swagger-ui-express");
+const swaggerUi = require("swagger-ui-express");
+const cors = require("cors");
 const routes = require("./routers/router");
 const app = express();
 const port = process.env.PORT || 3000;

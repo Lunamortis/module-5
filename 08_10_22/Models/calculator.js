@@ -1,5 +1,6 @@
 class Calculator {
     constructor() {
+      //Generate random number
       this.id = Date.now();
     }
   

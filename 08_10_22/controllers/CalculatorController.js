@@ -2,58 +2,10 @@
 
 "use strict";
 
-//by model
 
 const Calculator = require('../Models/Calculator')
 const myCalculator = new Calculator();
 
-exports.addOperationByTwoParams = (req, res) => {
-    try {
-      const number1 = parseInt(req.query.number1);
-      const number2 = parseInt(req.query.number2);
-      const sum = myCalculator.add(number1, number2);
-      res.status(200);
-      res.json({ success: true, data: sum });
-    } catch (e) {
-      throw Error(e.message);
-    }
-  };
-
-  exports.subtractOperationByTwoParams = (req, res) => {
-    try {
-        const number1 = parseInt(req.query.number1);
-        const number2 = parseInt(req.query.number2);
-        const subtract = myCalculator.subtract(number1, number2);
-        res.status(200);
-        res.json({ success: true, data: subtract });
-    } catch (e) {
-        throw Error(e.message);
-    }
-    };
-
-    exports.multiplyOperationByTwoParams = (req, res) => {
-        try {
-            const number1 = parseInt(req.query.number1);
-            const number2 = parseInt(req.query.number2);
-            const multiply = myCalculator.multiply(number1, number2);
-            res.status(200);
-            res.json({ success: true, data: multiply });
-        } catch (e) {
-            throw Error(e.message);
-        }
-        };
-
-        exports.divideOperationByTwoParams = (req, res) => {
-            try {
-                const number1 = parseInt(req.query.number1);
-                const number2 = parseInt(req.query.number2)
-                const divide = myCalculator.divide(number1, number2);
-                res.status(200);
-                res.json({ success: true, data: divide });
-            } catch (e) {
-                throw Error(e.message);
-            }
-            };
 
 // addByList
 
@@ -66,8 +18,8 @@ exports.addByList = (req, res) => {
     } catch (e) {
         throw Error(e.message);
     }
-    };
-    
+};
+
 
 exports.subtractByList = (req, res) => {
     try {
@@ -90,7 +42,7 @@ exports.multiplyByList = (req, res) => {
         });
 
         res.status(200);
-        res.json({ success: true, data: sum });
+        res.json({ success: true, data: totalMultiply });
     } catch (e) {
         throw Error(e.message);
     }

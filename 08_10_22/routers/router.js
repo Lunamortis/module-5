@@ -13,10 +13,6 @@ module.exports = (app) => {
 
     //Calculator Operations
 
-    app.route("/operation/subtract").get(calculator.subtractOperationByTwoParams);
-    app.route("/operation/add").get(calculator.addOperationByTwoParams);
-    app.route("/operation/multiply").get(calculator.multiplyOperationByTwoParams);
-    app.route("/operation/divide").get(calculator.divideOperationByTwoParams);
     app.route("/operation/addByTwoParams").get(calculator.addOperationByTwoParams);
     app.route("/operation/addByList").get(calculator.addByList);
     app.route("/operation/subtractByList").get(calculator.subtractByList);
