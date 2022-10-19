@@ -2,6 +2,8 @@
 
 "use strict";
 
+// const { userPostAPI } = require("../controllers/UserController");
+
 module.exports = (app) => {
     var calculator = require("../controllers/CalculatorController");
    
@@ -21,8 +23,7 @@ module.exports = (app) => {
     app.route("/operation/subtractByTwoParams").get(calculator.subtractObjectByTwoParams);
     app.route("/operation/multiplyByTwoParams").get(calculator.multiplyObjectByTwoPrams);
     app.route("/operation/divideByTwoParams").get(calculator.divideObjectByTwoPrams);
- 
-
+    
     // Handling 404 request from the client
     app.use((req, res, next) => {
         res.status(404).send("<h1>Page not found on the server</h1>");
