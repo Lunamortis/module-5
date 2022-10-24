@@ -4,6 +4,7 @@ const axios = require("axios");
 
 exports.userPostAPI = async (req, res) => {
   try {
+    console.log(process.env.USER_POST_API_ENDPOINT + req.query.postid)
     let posts = await axios.get(process.env.USER_POST_API_ENDPOINT + req.query.postid)
 
 

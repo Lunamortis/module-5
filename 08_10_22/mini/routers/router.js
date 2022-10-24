@@ -5,14 +5,6 @@
 const { userPostAPI } = require("../controllers/UserController");
 
 module.exports = (app) => {
-    var calculator = require("../controllers/CalculatorController");
-
-
-    //Root router
-    
-    app.get("/", (req, res) => {
-        res.send("Main Page");
-    });
 
     //userapi router
     app.route("/userPostAPI").get(userPostAPI);

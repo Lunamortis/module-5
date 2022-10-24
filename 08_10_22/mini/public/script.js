@@ -6,12 +6,12 @@ function Numgen() {
 
 function getnewcard() {
     let randompost = Numgen();
-    fetch('http://localhost:5000/userPostAPI?postid=' + randompost)
+    fetch('http://localhost:8000/userPostAPI?postid=' + randompost)
         .then((response) => response.json())
         .then(function (json) {
             console.log(json);
 
-            addCard(json);
+            addCard(json.data);
 
         });
 }
@@ -23,13 +23,6 @@ function addCard(post) {
     document.querySelector('#card-list').appendChild(template);
 }
 
-// custom scrollbar
-
-$(document).ready(function () {
-    if (!$.browser.webkit) {
-        $('.wrapper').html('<p>Sorry! Non webkit users. :(</p>');
-    }
-});
 
 
 

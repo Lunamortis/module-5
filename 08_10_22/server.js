@@ -12,26 +12,30 @@ const port = process.env.PORT || 3000;
 const servers = [];
 
 
-ports.forEach(port => {
-  let app = express()
-  servers.push(app)
-})
+// ports.forEach(port => {
+//   let app = express()
+//   servers.push(app)
+// })
 
-servers.forEach(server => {
-  let tempPort = ports.pop()
+// servers.forEach(server => {
+//   let tempPort = ports.pop()
 
-  server.use('/', express.static('public'))
-  server.listen(tempPort, () => {
-    console.log(`Example app listening at http://localhost:${tempPort}`)
-  })
-
-
-})
+//   server.use('/', express.static('public'))
+//   server.listen(tempPort, () => {
+//     console.log(`Example app listening at http://localhost:${tempPort}`)
+//   })
 
 
-// swaggerDocument = require("./swagger.json");
+// })
 
-// app.use('api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+ swaggerDocument = require("./swagger.json");
+
+ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+//need this line to make sure your index.html file in the public directory is loaded on the base endpoint
+app.use('/', express.static('public'))
+
 
 //register the route 
 

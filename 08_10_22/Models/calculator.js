@@ -1,11 +1,12 @@
 class Calculator {
     constructor() {
       //Generate random number
-      this.id = Date.now();
+      this.id = Math.random()
+      //this.id = Date.now();
     }
   
     #log = (value) => {
-      console.log(value);
+      console.log(this.id+': '+value); //this way you know which calc library instance is running the operations
     };
   
     add = (num1, num2) => {

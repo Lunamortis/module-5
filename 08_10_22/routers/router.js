@@ -9,9 +9,9 @@ module.exports = (app) => {
    
 
     //Root router
-    app.get("/", (req, res) => {
-        res.send("Main Page");
-    });
+    // app.get("/", (req, res) => {
+    //     res.send("Main Page");
+    // });
 
     //Calculator Operations
 

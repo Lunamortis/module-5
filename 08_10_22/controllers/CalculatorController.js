@@ -35,6 +35,7 @@ exports.subtractByList = (req, res) => {
 
 exports.multiplyByList = (req, res) => {
     try {
+        //should use the calculator library/model to do this
         const listElements = JSON.parse(req.query.list).numbers;
         let sum = 1;
         listElements.forEach((item) => {
@@ -50,6 +51,7 @@ exports.multiplyByList = (req, res) => {
 
 exports.divideByList = (req, res) => {
     try {
+        //should use the calculator library/model to do this
         const listElements = JSON.parse(req.query.list).numbers;
         let totalDivide = listElements[0];
         for (let i = 1; i < listElements.length; i++) {
@@ -69,7 +71,7 @@ exports.addOperationByTwoParams = (req, res) => {
     try {
         const number1 = parseInt(req.query.number1);
         const number2 = parseInt(req.query.number2);
-        const sum = number1 + number2;
+        const sum = myCalculator.add(number1, number2);        
         res.status(200);
         res.json({ success: true, data: sum });
     } catch (e) {
@@ -81,7 +83,7 @@ exports.subtractObjectByTwoParams = (req, res) => {
     try {
         const number1 = parseInt(req.query.number1);
         const number2 = parseInt(req.query.number2);
-        const difference = number1 - number2;
+        const difference = myCalculator.subtract(number1, number2);  
         res.status(200);
         res.json({ success: true, data: difference });
     } catch (e) {
@@ -92,7 +94,7 @@ exports.multiplyObjectByTwoPrams = (req, res) => {
     try {
         const number1 = parseInt(req.query.number1);
         const number2 = parseInt(req.query.number2);
-        const product = number1 * number2;
+        const product = myCalculator.multiply(number1, number2);  
         res.status(200);
         res.json({ success: true, data: product });
     } catch (e) {
@@ -105,7 +107,7 @@ exports.divideObjectByTwoPrams = (req, res) => {
     try {
         const number1 = parseInt(req.query.number1);
         const number2 = parseInt(req.query.number2);
-        const quotient = number1 / number2;
+        const quotient = myCalculator.divide(number1, number2);  
         res.status(200);
         res.json({ success: true, data: quotient });
     } catch (e) {
